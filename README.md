@@ -24,6 +24,8 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
+https://github.com/DaNnY-0324/WEB102-Pre-Work/blob/main/WEB102%20PW%20Walkthrough.gif
+
 GIF created with LiceCap
 
 ## Notes
