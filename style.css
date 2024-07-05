@@ -1,68 +1,130 @@
+/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
 
 body {
-  font-family: "Cabin";
+  font-family: "Cabin", sans-serif;
   background-color: #758190;
-}
-
-#tentacles {
-  width: 50px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
   display: flex;
-  background-color: lightblue;
-  padding: 1%;
   align-items: center;
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-top: -10px;
+  justify-content: center;
+  background-color: lightblue;
+  padding: 20px;
+}
+
+#tentacles {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.header-text {
+  font-size: 2em;
+  font-weight: 600;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+#description-container,
+#button-container {
+  text-align: center;
+  margin: 20px auto;
+  width: 80%;
 }
 
 .stats-container {
   display: flex;
-  align-items: center;
-}
-
-.stats-container:hover {
-  cursor: pointer;
-  box-shadow: 0 0 30px lightblue;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  width: 80%;
 }
 
 .stats-card {
   background-color: #a8b0bc;
   border-radius: 7px;
-  padding: 1%;
-  margin: 1%;
-  width: 100%;
+  padding: 20px;
+  margin: 10px;
+  width: 30%;
   text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.stats-card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 30px lightblue;
 }
 
 #num-contributions,
 #total-raised,
 #num-games {
-  font-size: 50px;
+  font-size: 2em;
+  margin: 10px 0;
+}
+
+#search-container {
+  text-align: center;
+  margin: 20px;
+}
+
+#search-input {
+  padding: 10px;
+  width: 50%;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  font-family: "Cabin", sans-serif;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 7px;
+  background-color: lightblue;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005f7f;
 }
 
 #games-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.game-img {
-  width: 100%;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #ffffff;
+  margin: 20px auto;
+  width: 80%;
 }
 
 .game-card {
   background-color: #ffffff;
-  padding: 1%;
-  margin: 1%;
+  padding: 20px;
+  margin: 10px;
   width: 300px;
   text-align: center;
   border-radius: 7px;
+  color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transition: box-shadow 0.3s;
 }
 
 .game-card:hover {
@@ -70,14 +132,14 @@ body {
   box-shadow: 0 0 30px lightblue;
 }
 
-#button-container {
-  text-align: center;
+.game-img {
+  width: 100%;
+  border-radius: 5px;
 }
 
-button {
-  font-family: "Cabin";
-  border: none;
-  padding: 1%;
-  margin: 1%;
-  border-radius: 7px;
+#middle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }

@@ -113,4 +113,18 @@ const secondGameElement = document.createElement("p");
 secondGameElement.innerHTML = `Runner-Up Game: ${secondGame.name}`;
 secondGameContainer.appendChild(secondGameElement);
 
+// Search functionality
+const searchInput = document.getElementById("search-input");
+
+searchInput.addEventListener("input", (e) => {
+  const searchTerm = e.target.value.toLowerCase();
+
+  const filteredGames = GAMES_JSON.filter((game) =>
+    game.name.toLowerCase().includes(searchTerm)
+  );
+
+  deleteChildElements(gamesContainer);
+  addGamesToPage(filteredGames);
+});
+
 AOS.init();
