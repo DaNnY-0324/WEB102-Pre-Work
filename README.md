@@ -23,7 +23,7 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
-[
+
 https://github.com/DaNnY-0324/WEB102-Pre-Work/blob/main/WEB102Walkthrough.gif
 
 GIF created with LiceCap
