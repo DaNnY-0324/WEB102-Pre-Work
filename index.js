@@ -11,10 +11,13 @@ function deleteChildElements(parent) {
 const gamesContainer = document.getElementById("games-container");
 
 function addGamesToPage(games) {
-  for (let game of games) {
+  games.forEach((game, index) => {
     const gameCard = document.createElement("div");
 
     gameCard.classList.add("game-card");
+
+    gameCard.setAttribute("data-aos", "fade-up");
+    gameCard.setAttribute("data-aos-delay", index * 100);
 
     gameCard.innerHTML = `
       <img src="${game.img}" class="game-img" />
@@ -24,7 +27,8 @@ function addGamesToPage(games) {
     `;
 
     gamesContainer.appendChild(gameCard);
-  }
+  });
+  AOS.refresh(); // Reinitialize AOS to apply animations to new elements
 }
 
 addGamesToPage(GAMES_JSON);
@@ -108,3 +112,5 @@ firstGameContainer.appendChild(firstGameElement);
 const secondGameElement = document.createElement("p");
 secondGameElement.innerHTML = `Runner-Up Game: ${secondGame.name}`;
 secondGameContainer.appendChild(secondGameElement);
+
+AOS.init();

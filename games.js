@@ -102,3 +102,5 @@ const template = `
 `;
 
 export default games;
+
+AOS.init();

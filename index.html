@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
-
   <body>
     <!-- header row with logo -->
     <div class="header">
@@ -50,13 +50,24 @@
     <!-- list of games funded by Sea Monster -->
     <h2>Our Games</h2>
     <p>Check out each of our games below!</p>
-    <div id="button-container">
-      <button id="unfunded-btn">Show Unfunded Only</button>
-      <button id="funded-btn">Show Funded Only</button>
-      <button id="all-btn">Show All Games</button>
+    <div id="button-container" data-aos="fade-up">
+      <button id="unfunded-btn" data-aos="fade-up" data-aos-delay="300">
+        Show Unfunded Only
+      </button>
+      <button id="funded-btn" data-aos="fade-up" data-aos-delay="600">
+        Show Funded Only
+      </button>
+      <button id="all-btn" data-aos="fade-up" data-aos-delay="900">
+        Show All Games
+      </button>
     </div>
-    <div id="games-container"></div>
+    <div
+      id="games-container"
+      data-aos="fade-up-right"
+      data-aos-delay="1200"
+    ></div>
 
     <script type="module" src="index.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   </body>
 </html>
