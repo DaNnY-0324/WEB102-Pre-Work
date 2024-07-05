@@ -11,13 +11,9 @@ function deleteChildElements(parent) {
 const gamesContainer = document.getElementById("games-container");
 
 function addGamesToPage(games) {
-  games.forEach((game, index) => {
+  for (let game of games) {
     const gameCard = document.createElement("div");
-
     gameCard.classList.add("game-card");
-
-    gameCard.setAttribute("data-aos", "fade-up");
-    gameCard.setAttribute("data-aos-delay", index * 100);
 
     gameCard.innerHTML = `
       <img src="${game.img}" class="game-img" />
@@ -27,50 +23,41 @@ function addGamesToPage(games) {
     `;
 
     gamesContainer.appendChild(gameCard);
-  });
-  AOS.refresh(); // Reinitialize AOS to apply animations to new elements
+  }
 }
 
+// Initial call to display all games
 addGamesToPage(GAMES_JSON);
 
 const contributionsCard = document.getElementById("num-contributions");
-
 const totalContributions = GAMES_JSON.reduce(
   (acc, game) => acc + game.backers,
   0
 );
-
 contributionsCard.innerHTML = `${totalContributions.toLocaleString("en-US")}`;
 
 const raisedCard = document.getElementById("total-raised");
 const totalRaised = GAMES_JSON.reduce((acc, game) => acc + game.pledged, 0);
-
 raisedCard.innerHTML = `$${totalRaised.toLocaleString("en-US")}`;
 
 const gamesCard = document.getElementById("num-games");
 const totalGames = GAMES_JSON.length;
-
 gamesCard.innerHTML = `${totalGames}`;
 
 function filterUnfundedOnly() {
   deleteChildElements(gamesContainer);
-
   const unfundedGames = GAMES_JSON.filter((game) => game.pledged < game.goal);
-
   addGamesToPage(unfundedGames);
 }
 
 function filterFundedOnly() {
   deleteChildElements(gamesContainer);
-
   const fundedGames = GAMES_JSON.filter((game) => game.pledged >= game.goal);
-
   addGamesToPage(fundedGames);
 }
 
 function showAllGames() {
   deleteChildElements(gamesContainer);
-
   addGamesToPage(GAMES_JSON);
 }
 
@@ -83,11 +70,9 @@ fundedBtn.addEventListener("click", filterFundedOnly);
 allBtn.addEventListener("click", showAllGames);
 
 const descriptionContainer = document.getElementById("description-container");
-
 const numUnfunded = GAMES_JSON.filter(
   (game) => game.pledged < game.goal
 ).length;
-
 const unfundedStr = `A total of ${numUnfunded} game${
   numUnfunded === 1 ? " remains" : "s remain"
 } unfunded. We need your help to fund these amazing games!`;
@@ -113,18 +98,16 @@ const secondGameElement = document.createElement("p");
 secondGameElement.innerHTML = `Runner-Up Game: ${secondGame.name}`;
 secondGameContainer.appendChild(secondGameElement);
 
+AOS.init();
+
 // Search functionality
 const searchInput = document.getElementById("search-input");
 
 searchInput.addEventListener("input", (e) => {
   const searchTerm = e.target.value.toLowerCase();
-
   const filteredGames = GAMES_JSON.filter((game) =>
     game.name.toLowerCase().includes(searchTerm)
   );
-
   deleteChildElements(gamesContainer);
   addGamesToPage(filteredGames);
 });
-
-AOS.init();
