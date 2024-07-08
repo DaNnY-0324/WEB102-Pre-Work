@@ -4,7 +4,7 @@ Submitted by: \*_Danny Nguyen_
 
 **Sea Monster Crowdfunding** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: **12** hours spent in total
+Time spent: **13** hours spent in total
 
 ## Required Features
 
@@ -24,7 +24,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-
+https://github.com/DaNnY-0324/WEB102-Pre-Work/blob/main/D.N.Walkthrough.gif
 
 GIF created with LiceCap
 
