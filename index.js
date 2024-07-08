@@ -26,8 +26,14 @@ function addGamesToPage(games) {
   }
 }
 
-// Initial call to display all games
-addGamesToPage(GAMES_JSON);
+function showFundedGames() {
+  const fundedGames = GAMES_JSON.filter((game) => game.pledged >= game.goal);
+  deleteChildElements(gamesContainer);
+  addGamesToPage(fundedGames);
+}
+
+// Initial call to display funded games
+showFundedGames();
 
 const contributionsCard = document.getElementById("num-contributions");
 const totalContributions = GAMES_JSON.reduce(
@@ -45,15 +51,13 @@ const totalGames = GAMES_JSON.length;
 gamesCard.innerHTML = `${totalGames}`;
 
 function filterUnfundedOnly() {
-  deleteChildElements(gamesContainer);
   const unfundedGames = GAMES_JSON.filter((game) => game.pledged < game.goal);
+  deleteChildElements(gamesContainer);
   addGamesToPage(unfundedGames);
 }
 
 function filterFundedOnly() {
-  deleteChildElements(gamesContainer);
-  const fundedGames = GAMES_JSON.filter((game) => game.pledged >= game.goal);
-  addGamesToPage(fundedGames);
+  showFundedGames();
 }
 
 function showAllGames() {
